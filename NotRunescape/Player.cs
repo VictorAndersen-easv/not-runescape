@@ -5,7 +5,7 @@ public class Player
     public int CurrentHp { get; set; } = 35;
     public int MaxHp { get; set; } = 35;
     public int Gold { get; set; } = StarterGold;
-    public const int StarterGold = 100;
+    public const int StarterGold = 200;
 
 public Dictionary<string, int> Inventory { get; set; } = new()
     {
