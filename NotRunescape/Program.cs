@@ -106,11 +106,12 @@ static void StartGiantFight(Player player, List<BossLog> bossLogs)
 
     int giantHp = 35;
     var rng = new Random();
+    bool ranAway = false;
 
     while (player.CurrentHp > 0 && giantHp > 0)
     {
         Console.WriteLine($"Your HP: {player.CurrentHp}/{player.MaxHp} | Hill Giant HP: {giantHp}");
-        Console.Write("Action: [1] Slash with Rune Scimitar  [2] Eat Lobster\nChoice: [3] Double Slash (50 GP)");
+        Console.Write("Action: [1] Slash with Rune Scimitar  [2] Eat Lobster\nChoice: [3] Double Slash (50 GP)  [4] Flee combat");
         var choice = Console.ReadLine()?.Trim();
 
         if (choice == "1")
@@ -152,6 +153,21 @@ static void StartGiantFight(Player player, List<BossLog> bossLogs)
                 Console.WriteLine("You don't have enough gold to use that!");
             }
         }
+        else if (choice == "4")
+        {
+            int fiddyfiddy = (rng.Next(0, 2));
+
+            if (fiddyfiddy == 0)
+            {
+                Console.WriteLine("You fucked up your attempt to run away and eat shit");
+            }
+            else if (fiddyfiddy >= 0)
+            {
+                ranAway = true;
+                break;
+            }
+            
+        }
 
         if (giantHp > 0)
         {
@@ -163,7 +179,7 @@ static void StartGiantFight(Player player, List<BossLog> bossLogs)
         }
     }
 
-    if (player.CurrentHp > 0)
+    if (player.CurrentHp > 0 && !ranAway)
     {
         Console.ForegroundColor = ConsoleColor.Cyan;
         Console.WriteLine("\nVICTORY! The Hill Giant collapses!");
@@ -200,11 +216,16 @@ static void StartGiantFight(Player player, List<BossLog> bossLogs)
             }
         }
     }
-    else
+    else if (!ranAway)
     {
         Console.ForegroundColor = ConsoleColor.Red;
         Console.WriteLine("\nOh dear, you are dead! Teleporting back to Lumbridge...");
         player.CurrentHp = player.MaxHp;
+        Console.ResetColor();
+    }
+    else
+    {
+        Console.WriteLine("\nYou managed to escape!");
         Console.ResetColor();
     }
 }
