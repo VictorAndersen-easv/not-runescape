@@ -17,7 +17,7 @@ Console.WriteLine($"Welcome to Gielinor, {characterName}");
 while (true)
 {
     Console.WriteLine($"\n[HP: {player.CurrentHp}/{player.MaxHp} | Gold: {player.Gold} GP]");
-    Console.Write("[1] Log Boss Kill  [2] View Drop Log  [3] View Inventory  [4] Drop Item  [99] Fight Hill Giant  [0] Exit\nChoice: ");
+    Console.Write("[1] Log Boss Kill  [2] View Drop Log  [3] View Inventory  [4] Drop Item  [5] Rest at Lumbridge Inn  [99] Fight Hill Giant  [0] Exit\nChoice: ");
     var input = Console.ReadLine()?.Trim();
 
     if (input == "0") break;
@@ -55,6 +55,12 @@ while (true)
     {
         HandleDropItem(player);
     }
+    else if (input == "5")
+    {
+        RestAtInn(player);
+
+        
+    }
     else if (input == "99")
     {
         StartGiantFight(player, bossLogs);
@@ -86,6 +92,13 @@ static void HandleDropItem(Player player)
         Console.WriteLine("Invalid amount.");
     }
 }
+
+static void RestAtInn(Player player)
+{
+    player.CurrentHp = player.MaxHp;
+    Console.WriteLine("You have rested and fully recovered your health.");
+}
+
 
 static void StartGiantFight(Player player, List<BossLog> bossLogs)
 {
