@@ -110,7 +110,7 @@ static void StartGiantFight(Player player, List<BossLog> bossLogs)
     while (player.CurrentHp > 0 && giantHp > 0)
     {
         Console.WriteLine($"Your HP: {player.CurrentHp}/{player.MaxHp} | Hill Giant HP: {giantHp}");
-        Console.Write("Action: [1] Slash with Rune Scimitar  [2] Eat Lobster\nChoice: ");
+        Console.Write("Action: [1] Slash with Rune Scimitar  [2] Eat Lobster\nChoice: [3] Double Slash (50 GP)");
         var choice = Console.ReadLine()?.Trim();
 
         if (choice == "1")
@@ -118,7 +118,7 @@ static void StartGiantFight(Player player, List<BossLog> bossLogs)
             int playerHit = rng.Next(0, 15);
             giantHp -= playerHit;
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine($"\nYou slash the Hill Giant for a {playerHit}!");
+            Console.WriteLine($"\nYou slash the Hill Giant for {playerHit} damage !");
             Console.ResetColor();
         }
         else if (choice == "2")
@@ -132,6 +132,24 @@ static void StartGiantFight(Player player, List<BossLog> bossLogs)
             else
             {
                 Console.WriteLine("\nYou don't have any Lobsters in your inventory!");
+            }
+        }
+        else if (choice == "3")
+        {
+            if (player.Gold >= 50)
+            {
+                int firstHit = rng.Next(0, 10);
+                int secondHit = rng.Next(0, 10);
+                giantHp -= (firstHit + secondHit);
+                player.Gold -= 50;
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine($"\nYou slash twice at the Hill Giant for {firstHit + " and " + secondHit} damage!");
+                Console.WriteLine("and you lost 50 gold to do it.");
+                Console.ResetColor();
+            }
+            else
+            {
+                Console.WriteLine("You don't have enough gold to use that!");
             }
         }
 

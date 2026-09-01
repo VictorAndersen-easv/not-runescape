@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kan\\Education material\\NotRunescape\\NotRunescape\\NotRunescape.csproj": {}
+    "C:\\Users\\Victor\\src\\not-runescape\\NotRunescape\\NotRunescape.csproj": {}
   },
   "projects": {
-    "C:\\Users\\kan\\Education material\\NotRunescape\\NotRunescape\\NotRunescape.csproj": {
+    "C:\\Users\\Victor\\src\\not-runescape\\NotRunescape\\NotRunescape.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kan\\Education material\\NotRunescape\\NotRunescape\\NotRunescape.csproj",
+        "projectUniqueName": "C:\\Users\\Victor\\src\\not-runescape\\NotRunescape\\NotRunescape.csproj",
         "projectName": "NotRunescape",
-        "projectPath": "C:\\Users\\kan\\Education material\\NotRunescape\\NotRunescape\\NotRunescape.csproj",
-        "packagesPath": "C:\\Users\\kan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kan\\Education material\\NotRunescape\\NotRunescape\\obj\\",
+        "projectPath": "C:\\Users\\Victor\\src\\not-runescape\\NotRunescape\\NotRunescape.csproj",
+        "packagesPath": "C:\\Users\\Victor\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Victor\\src\\not-runescape\\NotRunescape\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\kan\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Victor\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
@@ -39,7 +39,7 @@
           "auditLevel": "low",
           "auditMode": "all"
         },
-        "SdkAnalysisLevel": "10.0.300"
+        "SdkAnalysisLevel": "10.0.400"
       },
       "frameworks": {
         "net10.0": {
@@ -61,7 +61,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.303/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.400/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",
